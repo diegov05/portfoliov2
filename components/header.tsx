@@ -1,3 +1,5 @@
+import { Title } from "./title"
+
 export const Header: React.FC = () => {
   return (
     <header
@@ -22,7 +24,7 @@ export const Header: React.FC = () => {
         lg:max-[3000px]:h-[30rem]
       " />
       <div
-        className="
+        className=" 
         flex 
         items-center 
         justify-center 
@@ -38,28 +40,18 @@ export const Header: React.FC = () => {
           ">
           DESIGN . CODE . DEPLOY
         </p>
-        <h1
-          className="
-          text-[#e9ecea]
-          header-title
-          font-extrabold
-          leading-normal
-          text-3xl
-          sm:max-lg:text-5xl
-          lg:max-[3000px]:text-[5rem] 
-          text-center
-          ">
+        <Title className="text-center">
           Engaging<br
             className="hidden min-[500px]:block"
           />
           <span className="header-title-gradient">
             Web Experiences.
           </span>
-        </h1>
+        </Title>
       </div>
       <h2
         className="
-        header-subtitle
+        text-secondary
         text-sm
         sm:max-lg:text-lg
         lg:max-[3000px]:text-xl 
@@ -78,7 +70,7 @@ export const Header: React.FC = () => {
         text-sm
         sm:max-lg:text-lg
         lg:max-[3000px]:text-xl
-        py-2 
+        py-2
         px-12 
         cursor-pointer 
         rounded-full 

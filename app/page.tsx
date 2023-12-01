@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/navbar'
 import { Header } from '@/components/header'
 import { HorizontalTechStack } from '@/components/tech-stack/tech-stack'
+import { LearnMoreSection } from '@/containers/learn-more'
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
         <Navbar />
         <Header />
         <HorizontalTechStack />
-        <main></main>
+        <main className='p-8'>
+          <LearnMoreSection />
+        </main>
       </div>
     </>
   )

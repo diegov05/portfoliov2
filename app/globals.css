@@ -71,7 +71,7 @@ nav ul {
   -webkit-text-fill-color: transparent;
 }
 
-.header-title-gradient {
+.dddddd-gradient {
   background: var(
     --Text-Gradient,
     linear-gradient(180deg, #e9ecea 42.6%, #737373 200%)
@@ -81,7 +81,7 @@ nav ul {
   -webkit-text-fill-color: transparent;
 }
 
-.header-subtitle {
+.text-secondary {
   color: rgba(225, 248, 255, 0.7);
   font-family: Plus Jakarta Sans;
   font-weight: 500;
@@ -135,4 +135,39 @@ nav ul {
       rgba(0, 0, 0, 1) 100%
     )
     1;
+}
+
+.svg-size {
+  @layer components {
+    .svg-size {
+      @apply md:max-[3000px]:h-6 sm:h-4 h-4 w-auto;
+    }
+  }
+}
+
+.badge-text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  background: var(
+    --Subtitle-Gradient,
+    linear-gradient(180deg, #e9ecea 0%, #99e7ff 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-gradient {
+  background: var(
+    --Box-Gradient,
+    linear-gradient(
+      103deg,
+      rgba(153, 231, 255, 0.2) 2.27%,
+      rgba(30, 30, 30, 0) 84.04%,
+      #99e7ff 108.35%
+    )
+  );
 }
