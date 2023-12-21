@@ -13,6 +13,31 @@ export const Projects = () => {
         xl:max-[3000px]:mt-48
         px-8
     ">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="
+        flex
+        flex-col
+        gap-4
+        justify-center
+        items-center
+        xl:max-[3000px]:justify-end 
+        xl:max-[3000px]:items-end
+      ">
+        <Badge content="My Work" />
+        <Title
+          className="
+          w-[10ch] 
+          xl:max-[3000px]:text-end 
+          text-center
+          text-[23px]
+          sm:max-lg:text-[32px]
+          lg:max-[3000px]:text-[45px]
+        ">
+          Featured Projects
+        </Title>
+      </div>
       {projects.map((project) => (
         <div
           key={project.name}
