@@ -28,7 +28,6 @@ export const Projects = () => {
         <Badge content="My Work" />
         <Title
           className="
-          w-[10ch] 
           xl:max-[3000px]:text-end 
           text-center
           text-[23px]
