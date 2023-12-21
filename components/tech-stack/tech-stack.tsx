@@ -10,23 +10,25 @@ import { TypeScriptLogo } from "./logos/ts-logo"
 export const HorizontalTechStack: React.FC = () => {
   return (
     <section
+      data-aos="fade"
+      data-aos-duration="1000"
       className="
         flex
         flex-col
         justify-center
         items-center
         tech-gradient
-        gap-4
+        gap-8
         p-4      
       ">
       <p
         className="
-        text-sm
-        sm:max-lg:text-lg
-        lg:max-[3000px]:text-xl
+        text-[16px]
+        lg:max-[3000px]:text-[23px]
         text-[#e9ecea]
         opacity-60
-        max-md:w-[30ch]
+        w-[20ch]
+        md:max-[3000px]:w-auto
         font-medium
         text-center
         "

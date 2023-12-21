@@ -1,0 +1,89 @@
+@tailwind components;
+
+.slider-item {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  background: transparent;
+  border-left: 1px solid #404a47;
+  color: var(--buttons-primary, #404a47);
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  transition: all 300ms ease;
+}
+
+.slider-item:hover {
+  color: var(--text, #e9ecea);
+  background: rgba(153, 231, 255, 0.1);
+}
+.selected-slider-item {
+  font-weight: 500;
+  color: var(--text, #e9ecea);
+  background: rgba(153, 231, 255, 0.1);
+  border-left: 3px solid #99e7ff;
+  transition: all 300ms ease;
+}
+
+@media (max-width: 767px) {
+  .slider-item {
+    border-left: none;
+    border-bottom: 1px solid #404a47;
+  }
+  .selected-slider-item {
+    font-weight: 500;
+    color: var(--text, #e9ecea);
+    background: transparent;
+    border-bottom: 3px solid #99e7ff;
+    transition: all 300ms ease;
+  }
+  .slider-item:hover {
+    color: var(--text, #e9ecea);
+    background: transparent;
+  }
+}
+
+.experience-list {
+  list-style-image: none;
+}
+.experience-list li {
+  position: relative;
+  padding-left: 2rem; /* Space between triangle and text */
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transform: translateY(-50%);
+    transform: rotate(180deg);
+    border-style: solid;
+    border-width: 6px 8px; /* Adjust size of the triangle */
+    border-color: transparent #99e7ff transparent transparent; /* Adjust color */
+  }
+}
+.experience-list li {
+  @layer components {
+    .experience-list li {
+      @apply text-[11px] sm:max-lg:text-[16px] lg:max-[3000px]:text-[23px] font-normal text-[#E1F8FF] opacity-70;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .experience-list li {
+    padding-left: 1rem; /* Space between triangle and text */
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 0;
+      transform: translateY(-50%);
+      transform: rotate(180deg);
+      border-style: solid;
+      border-width: 2px 4px; /* Adjust size of the triangle */
+      border-color: transparent #99e7ff transparent transparent; /* Adjust color */
+    }
+  }
+}

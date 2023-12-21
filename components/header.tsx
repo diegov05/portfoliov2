@@ -3,6 +3,8 @@ import { Title } from "./title"
 export const Header: React.FC = () => {
   return (
     <header
+      data-aos="fade-up"
+      data-aos-duration="2000"
       className="
       flex 
       flex-col 
@@ -34,14 +36,13 @@ export const Header: React.FC = () => {
         <p
           className="
           header-slogan 
-          text-xs
-          sm:max-lg:text-sm
-          lg:max-[3000px]:text-lg
+          text-[16px]
+          lg:max-[3000px]:text-[23px]
           ">
           DESIGN . CODE . DEPLOY
         </p>
         <Title className="text-center">
-          Engaging<br
+          Engaging <br
             className="hidden min-[500px]:block"
           />
           <span className="header-title-gradient">
@@ -52,9 +53,8 @@ export const Header: React.FC = () => {
       <h2
         className="
         text-secondary
-        text-sm
-        sm:max-lg:text-lg
-        lg:max-[3000px]:text-xl 
+        text-[16px]
+        lg:max-[3000px]:text-[23px]
         text-center
         ">
         Revealing Code Insights, Debugging Glitches,
@@ -67,9 +67,8 @@ export const Header: React.FC = () => {
         type="button"
         className="
         header-button 
-        text-sm
-        sm:max-lg:text-lg
-        lg:max-[3000px]:text-xl
+        text-[16px]
+        lg:max-[3000px]:text-[23px]
         py-2
         px-12 
         cursor-pointer 
@@ -81,9 +80,8 @@ export const Header: React.FC = () => {
       <a
         className="
         header-link 
-        text-xs
-        sm:max-lg:text-sm
-        lg:max-[3000px]:text-lg
+        text-[16px]
+        lg:max-[3000px]:text-[23px]
         text-center 
         font-medium"
         href="">

@@ -4,13 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --small-text: 16px;
-  --medium-text: 23px;
-  --big-text: 32px;
-  --large-text: 45px;
-  --huge-text: 64px;
-}
 * {
   font-family: "Plus Jakarta Sans";
 }
@@ -22,7 +15,7 @@ body {
 .navbar-links-text {
   @layer components {
     .navbar-links-text {
-      @apply text-sm;
+      @apply text-[16px];
     }
   }
   font-weight: 500;
@@ -71,7 +64,7 @@ nav ul {
   -webkit-text-fill-color: transparent;
 }
 
-.dddddd-gradient {
+.header-title-gradient {
   background: var(
     --Text-Gradient,
     linear-gradient(180deg, #e9ecea 42.6%, #737373 200%)
@@ -99,8 +92,6 @@ nav ul {
       #99e7ff 108.35%
     )
   );
-
-  /* Layer Blur */
   filter: blur(63.5px);
 }
 
@@ -121,13 +112,11 @@ nav ul {
 
 .header-link {
   color: #99e7ff;
-  text-align: center;
-  font-weight: 500;
-  line-height: normal;
 }
 
 .tech-gradient {
-  border-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
   border-style: solid;
   border-image: radial-gradient(
       circle,
@@ -170,4 +159,14 @@ nav ul {
       #99e7ff 108.35%
     )
   );
+}
+
+.company-gradient {
+  background: var(
+    --Subtitle-Gradient,
+    linear-gradient(180deg, #e9ecea 0%, #99e7ff 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -21,9 +21,9 @@ export const Badge: React.FC<BadgeProps> = ({ content }) => {
       <span
         className="
         badge-text 
-        text-xs
-        sm:max-lg:text-base
-        lg:max-[3000px]:text-lg
+        text-[11px]
+        sm:max-lg:text-[16px]
+        lg:max-[3000px]:text-[23px]
       ">{content}
       </span>
     </div>
