@@ -27,8 +27,8 @@ export const FilmasterImage = () => {
 
       </div>
       <Image
-        width={630}
-        height={800}
+        width={3376}
+        height={4261}
         alt="filmaster-project"
         src={filmaster}
         className="
