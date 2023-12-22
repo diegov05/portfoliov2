@@ -26,6 +26,13 @@ body {
 }
 
 nav ul {
+  background: linear-gradient(
+    103deg,
+    rgba(153, 231, 255, 0.2) 1%,
+    rgba(30, 30, 30, 0) 10%,
+    rgba(30, 30, 30, 0) 95%,
+    #99e7ff 108.35%
+  );
   border: 1px solid #404a47;
 }
 
@@ -95,8 +102,10 @@ nav ul {
     --Box-Gradient,
     linear-gradient(
       103deg,
-      rgba(153, 231, 255, 0.2) 2.27%,
       rgba(30, 30, 30, 0) 84.04%,
+      rgba(153, 231, 255, 0.2) 2%,
+      rgba(30, 30, 30, 0) 20%,
+      rgba(30, 30, 30, 0) 93%,
       #99e7ff 108.35%
     )
   );
