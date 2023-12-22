@@ -2,11 +2,13 @@ import { Badge } from "@/components/badge";
 import { Title } from "@/components/title";
 import Image from "next/image";
 import phone from "@/assets/phone2.png"
+import Link from "next/link";
 
 export const Footer = () => (
   <>
     <div
       data-aos="fade-up"
+      data-aos-duration="1000"
       className="
       flex 
       flex-col 
@@ -21,23 +23,28 @@ export const Footer = () => (
         className="
         flex
         flex-col
-        gap-4
+        gap-8
         justify-center
         items-center
         md:max-[3000px]:justify-start 
         md:max-[3000px]:items-start
       ">
-        <Badge content="Contact Me" />
-        <Title
-          className="
+        <div className="flex flex-col gap-2 justify-center
+        items-center
+        md:max-[3000px]:justify-start 
+        md:max-[3000px]:items-start">
+          <Badge content="Contact Me" />
+          <Title
+            className="
           xl:max-[3000px]:text-start 
           text-center
           text-[23px]
           sm:max-lg:text-[32px]
           lg:max-[3000px]:text-[45px]
         ">
-          Get In Touch
-        </Title>
+            Get In Touch
+          </Title>
+        </div>
         <p
           className="
           text-secondary
@@ -50,8 +57,9 @@ export const Footer = () => (
       ">
           Open for job opportunities, open-source collaboration and freelance requests.
         </p>
-        <button
-          type="button"
+        <Link
+          href={"mailto:diegovs_@outlook.com"}
+          target="_a"
           className="
         w-max
         header-button 
@@ -64,7 +72,7 @@ export const Footer = () => (
         font-extrabold
         ">
           Contact Me
-        </button>
+        </Link>
       </div>
       <div className="w-full flex items-center justify-center">
         <div

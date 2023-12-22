@@ -13,6 +13,8 @@ export const HorizontalTechStack: React.FC = () => {
       data-aos="fade"
       data-aos-duration="1000"
       className="
+        mt-12
+        md:max-[3000px]:mt-0
         flex
         flex-col
         justify-center

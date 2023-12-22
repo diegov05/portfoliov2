@@ -5,6 +5,7 @@ import { projects } from "./data/projectsData"
 export const Projects = () => {
   return (
     <section
+      id="projects"
       className="
         flex
         flex-col
@@ -140,7 +141,8 @@ export const Projects = () => {
                 md:max-[3000px]:px-4
                 rounded-full
                 border-[#E1F8FFB2]
-                border-2
+                border
+                md:max-[3000px]:border-2
                 transition
                 duration-300
                 opacity-50
@@ -166,7 +168,8 @@ export const Projects = () => {
                   md:max-[3000px]:px-4
                   rounded-full
                   border-[#E1F8FFB2]
-                  border-2
+                  border
+                  md:max-[3000px]:border-2
                   transition
                   duration-300
                   opacity-50

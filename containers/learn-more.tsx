@@ -6,6 +6,7 @@ import Image from "next/image"
 export const LearnMoreSection = () => {
   return (
     <section
+      id="learn-more"
       className="
       p-8
       flex
@@ -46,14 +47,12 @@ export const LearnMoreSection = () => {
           text-secondary
           text-[16px]
           lg:max-[3000px]:text-[32px]
-          w-[25ch]
+          w-auto
+          sm:max-[3000px]:w-[25ch]
           xl:max-[3000px]:text-start
           text-center
       ">
-          Experience Captivating UIs,
-          Streamlined Monitoring:
-          Let&apos;s Collaborate for
-          Seamless Solutions.
+          Hey, I&apos;m Diego! 👋 A Frontend Engineer with hands-on experience in web application development, blending front-end and back-end systems using the MERN stack. Skilled in crafting responsive interfaces with React and TypeScript, I focus on user-friendly designs.
         </p>
       </div>
       <Image

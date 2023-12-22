@@ -5,10 +5,7 @@ export const projects = [
   {
     name: "Filmaster",
     badge: "IMDb Clone",
-    description: `Experience Captivating UIs, 
-  Streamlined Monitoring.
-  Experience Captivating UIs,
-  Streamlined Monitoring.`,
+    description: `Upgraded version of Filmaster, a Responsive Modern UI/UX Movie Catalog Application using React, TypeScript, Tailwind, Firebase Hosting and Firestore Database.`,
     githubLink: "https://github.com/diegov05/filmasterV2",
     livePreview: "https://filmasterv2.web.app/",
     image: <FilmasterImage />,
@@ -16,10 +13,7 @@ export const projects = [
   {
     name: "Spotify Clone",
     badge: "Spotify Clone",
-    description: `Experience Captivating UIs, 
-  Streamlined Monitoring.
-  Experience Captivating UIs,
-  Streamlined Monitoring.`,
+    description: `Spotify Clone using Next.js 13, TypeScript, Supabase, RadixUI, Tailwindcss and setting up test payments with Stripe. Deployed with Vercel.`,
     githubLink: "https://github.com/diegov05/spotify-clone",
     livePreview: "https://spotify-clone-black-five.vercel.app/",
     image: <SpotifyImage />,

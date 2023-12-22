@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Title } from "./title"
 
 export const Header: React.FC = () => {
@@ -6,6 +7,7 @@ export const Header: React.FC = () => {
       data-aos="fade-up"
       data-aos-duration="2000"
       className="
+      mt-36
       flex 
       flex-col 
       justify-center 
@@ -45,7 +47,7 @@ export const Header: React.FC = () => {
           Engaging <br
             className="hidden min-[500px]:block"
           />
-          <span className="header-title-gradient">
+          <span className="title-gradient">
             Web Experiences.
           </span>
         </Title>
@@ -63,8 +65,9 @@ export const Header: React.FC = () => {
         />
         and Ensuring Seamless Functionality.
       </h2>
-      <button
-        type="button"
+      <Link
+        href={"mailto:diegovs_@outlook.com"}
+        target="_a"
         className="
         header-button 
         text-[16px]
@@ -76,17 +79,21 @@ export const Header: React.FC = () => {
         font-extrabold
         ">
         Contact Me
-      </button>
-      <a
+      </Link>
+      <Link
         className="
-        header-link 
+        border-b
+        border-transparent
+        hover:border-[#99e7ff]
+        header-link
         text-[16px]
         lg:max-[3000px]:text-[23px]
-        text-center 
+        text-center
         font-medium"
-        href="">
+        href={'/#projects'}
+      >
         Check out the work I&apos;ve done
-      </a>
+      </Link>
     </header>
   )
 }

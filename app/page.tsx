@@ -37,7 +37,7 @@ export default function Home() {
           <TechStackCarousel />
           <Projects />
         </main>
-        <footer className='p-16 pb-0'>
+        <footer id='contact' className='p-16 pb-0'>
           <Footer />
         </footer>
       </div>

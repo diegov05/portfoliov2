@@ -5,6 +5,7 @@ import { Title } from "@/components/title"
 export const ExperienceSection = () => {
   return (
     <section
+      id="experience"
       data-aos="fade-up"
       data-aos-duration="1000"
       className="

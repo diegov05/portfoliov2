@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 * {
+  scroll-behavior: smooth;
   font-family: "Plus Jakarta Sans";
 }
 
@@ -15,7 +16,7 @@ body {
 .navbar-links-text {
   @layer components {
     .navbar-links-text {
-      @apply text-[16px];
+      @apply text-[14px];
     }
   }
   font-weight: 500;
@@ -49,10 +50,6 @@ nav ul {
 .navbar-links-item a:hover {
   color: #e9ecea;
 }
-.mobile-nav {
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-}
 
 .header-slogan {
   font-family: Inter;
@@ -64,11 +61,8 @@ nav ul {
   -webkit-text-fill-color: transparent;
 }
 
-.header-title-gradient {
-  background: var(
-    --Text-Gradient,
-    linear-gradient(180deg, #e9ecea 42.6%, #737373 200%)
-  );
+.title-gradient {
+  background: linear-gradient(180deg, #e9ecea 42.6%, #737373 200%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -116,6 +110,16 @@ nav ul {
 
 .tech-gradient {
   border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-image: radial-gradient(
+      circle,
+      rgba(64, 74, 71, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    )
+    1;
+}
+.mobile-nav-gradient {
   border-bottom-width: 1px;
   border-style: solid;
   border-image: radial-gradient(

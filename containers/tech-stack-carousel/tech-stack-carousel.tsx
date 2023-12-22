@@ -1,6 +1,7 @@
 import "./styles/tech-stack-carousel.css"
 import { techStack } from "./data/technicalStack"
 import { tools } from "./data/tools"
+import Link from "next/link";
 
 export const TechStackCarousel = () => {
 
@@ -64,21 +65,27 @@ export const TechStackCarousel = () => {
           lg:max-[3000px]:text-[23px] 
           font-medium 
           text-[#E1F8FF] 
+          lg:max-[3000px]:text-start
+          text-center
           opacity-70
           ">
-            Experience Captivating UIs, <br />
-            Streamlined Monitoring.
+            I love working with these technologies. <br /> Efficiency empowered, building with <br /> speed and stability
           </h2>
         </div>
-        <a
+        <Link
           className="
-          header-link 
-          text-[11px]
-          lg:max-[3000px]:text-[23px] 
-          font-medium"
-          href="">
+        border-b
+        border-transparent
+        hover:border-[#99e7ff]
+        header-link
+        text-[16px]
+        lg:max-[3000px]:text-[23px]
+        text-center
+        font-medium"
+          href={'/#projects'}
+        >
           Check out the work I&apos;ve done
-        </a>
+        </Link>
       </div>
       <div className="
         h-full
