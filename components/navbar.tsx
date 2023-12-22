@@ -17,7 +17,8 @@ export const Navbar: React.FC = () => {
     },
     {
       linkText: "Resume",
-      href: "https://drive.google.com/file/d/1sfiaPkFwlLhdVUoyzxvxjvUygs0giNTA/view?usp=sharing"
+      href: "https://drive.google.com/file/d/1sfiaPkFwlLhdVUoyzxvxjvUygs0giNTA/view?usp=sharing",
+      target: "_a"
     },
     {
       linkText: "Experience",
@@ -50,7 +51,7 @@ export const Navbar: React.FC = () => {
         `}
       >
         <ul className="border-0 w-full pt-20">
-          {linksMap.map(({ linkText, href }) => (
+          {linksMap.map(({ linkText, href, target }) => (
             <li
               key={linkText}
               className="
@@ -62,7 +63,7 @@ export const Navbar: React.FC = () => {
               mobile-nav-gradient
               "
             >
-              <Link onClick={() => setOpen(false)} href={href}>{linkText}</Link>
+              <Link target={target} onClick={() => setOpen(false)} href={href}>{linkText}</Link>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 text-slate-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
