@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react"
 
@@ -42,7 +43,7 @@ export const Navbar: React.FC = () => {
         sm:max-[3000px]:hidden
         ${open ? "h-[100vh] w-screen" : "h-[100vh] w-0"}
         right-0
-        top-0
+        top-6
         transition-all
         duration-1000
         bg-[#050505]/90
@@ -78,16 +79,28 @@ export const Navbar: React.FC = () => {
         w-full
         flex
         fixed
-        justify-end 
-        items-end 
+        justify-between 
+        items-center 
         sm:max-[3000px]:items-center 
-        sm:max-[3000px]:justify-center
+        sm:max-[3000px]:justify-between
         p-8
         backdrop-blur-md
         bg-[#050505]/50
         mobile-nav-gradient
         border-opacity-50
       ">
+        <Link href={'/'} className="
+          text-[#e9ecea]
+            py-2
+            px-4
+            header-button
+            transition
+            hover:opacity-80
+            rounded-md
+            font-black
+        ">
+          DV
+        </Link>
         <button onClick={handleOpen} className="block sm:max-[3000px]:hidden">
           {!open ?
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-[#E9ECEA]">
@@ -98,7 +111,8 @@ export const Navbar: React.FC = () => {
             </svg>
           }
         </button>
-        <ul className="
+        <div className="sm:max-[3000px]:flex hidden justify-center items-center w-full">
+          <ul className="
         hidden
         sm:max-[3000px]:flex 
         flex-row 
@@ -109,12 +123,13 @@ export const Navbar: React.FC = () => {
         items-center 
         justify-center 
         border">
-          <li><Link className="navbar-links-text" href="/#learn-more">About me</Link></li>
-          <li><Link className="navbar-links-text" target="_a" href="https://drive.google.com/file/d/1sfiaPkFwlLhdVUoyzxvxjvUygs0giNTA/view?usp=sharing">Resume</Link></li>
-          <li><Link className="navbar-links-text" href="/#experience">Experience</Link></li>
-          <li><Link className="navbar-links-text" href="/#projects">My Work</Link></li>
-          <li><Link className="navbar-links-text" href="/#contact">Contact Me</Link></li>
-        </ul>
+            <li><Link className="navbar-links-text" href="/#learn-more">About me</Link></li>
+            <li><Link className="navbar-links-text" target="_a" href="https://drive.google.com/file/d/1sfiaPkFwlLhdVUoyzxvxjvUygs0giNTA/view?usp=sharing">Resume</Link></li>
+            <li><Link className="navbar-links-text" href="/#experience">Experience</Link></li>
+            <li><Link className="navbar-links-text" href="/#projects">My Work</Link></li>
+            <li><Link className="navbar-links-text" href="/#contact">Contact Me</Link></li>
+          </ul>
+        </div>
       </nav>
     </>
   )
