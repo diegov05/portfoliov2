@@ -69,7 +69,7 @@ export const Footer = () => (
         px-12 
         cursor-pointer 
         rounded-full 
-        font-extrabold
+        font-medium
         ">
           Contact Me
         </Link>

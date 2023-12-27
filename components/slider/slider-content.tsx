@@ -30,9 +30,9 @@ export const SliderContent: React.FC<SliderContentProps> = ({ role, company, dat
       ">
         <h1
           className="
+          title-gradient
           w-[60vw]
-        text-[#e9ecea]
-        font-extrabold
+        font-medium
         leading-normal
         text-[23px]
         sm:max-lg:text-[32px]
@@ -51,7 +51,7 @@ export const SliderContent: React.FC<SliderContentProps> = ({ role, company, dat
           text-[11px]
           sm:max-lg:text-[16px]
           lg:max-[3000px]:text-[23px]
-          font-semibold
+          font-normal
           text-[#E1F8FF]
           opacity-70
         ">

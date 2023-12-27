@@ -98,8 +98,8 @@ export const Projects = () => {
               </div>
               <h1
                 className="
-              text-[#e9ecea]
-              font-extrabold
+                title-gradient
+              font-medium
               leading-normal
               text-[23px]
               sm:max-lg:text-[32px]

@@ -45,9 +45,10 @@ export const TechStackCarousel = () => {
         ">
           <h1
             className="
+              title-gradient
               lg:max-[3000px]:w-[30vw]
               text-[#e9ecea]
-              font-extrabold
+              font-medium
               leading-normal
               text-[23px]
               sm:max-lg:text-[32px]
@@ -63,7 +64,7 @@ export const TechStackCarousel = () => {
           text-[11px] 
           sm:max-lg:text-[16px] 
           lg:max-[3000px]:text-[23px] 
-          font-medium 
+          font-light 
           text-[#E1F8FF] 
           lg:max-[3000px]:text-start
           text-center
@@ -81,7 +82,7 @@ export const TechStackCarousel = () => {
         text-[16px]
         lg:max-[3000px]:text-[23px]
         text-center
-        font-medium"
+        font-normal"
           href={'/#projects'}
         >
           Check out the work I&apos;ve done

@@ -11,7 +11,7 @@ export const Title: React.FC<TitleProps> = ({ children, className }) => {
       className={
         `${className}
         title-gradient
-        font-extrabold
+        font-[500]
         leading-normal
         text-[32px]
         sm:max-lg:text-[45px]

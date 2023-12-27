@@ -4,11 +4,11 @@
   padding: 1rem 2rem;
   cursor: pointer;
   background: transparent;
+  font-weight: 300;
   border-left: 1px solid #404a47;
   color: var(--buttons-primary, #404a47);
-  font-family: Plus Jakarta Sans;
+  font-family: "Helvetica Now Text";
   font-style: normal;
-  font-weight: 300;
   line-height: normal;
   transition: all 300ms ease;
 }
@@ -18,7 +18,7 @@
   background: rgba(153, 231, 255, 0.1);
 }
 .selected-slider-item {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text, #e9ecea);
   background: rgba(153, 231, 255, 0.1);
   border-left: 3px solid #99e7ff;
@@ -47,6 +47,7 @@
   list-style-image: none;
 }
 .experience-list li {
+  font-family: "Helvetica Now Text";
   position: relative;
   padding-left: 2rem; /* Space between triangle and text */
 
@@ -65,7 +66,7 @@
 .experience-list li {
   @layer components {
     .experience-list li {
-      @apply text-[11px] sm:max-lg:text-[16px] lg:max-[3000px]:text-[23px] font-normal text-[#E1F8FF] opacity-70;
+      @apply text-[11px] sm:max-lg:text-[16px] lg:max-[3000px]:text-[23px] font-light text-[#E1F8FF] opacity-70;
     }
   }
 }

@@ -31,7 +31,7 @@ export const HorizontalTechStack: React.FC = () => {
         opacity-60
         w-[20ch]
         md:max-[3000px]:w-auto
-        font-medium
+        font-normal
         text-center
         "
       >

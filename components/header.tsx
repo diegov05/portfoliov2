@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
         px-12 
         cursor-pointer 
         rounded-full 
-        font-extrabold
+        font-[500]
         ">
         Contact Me
       </Link>
@@ -89,7 +89,8 @@ export const Header: React.FC = () => {
         text-[16px]
         lg:max-[3000px]:text-[23px]
         text-center
-        font-medium"
+        font-[400]
+        "
         href={'/#projects'}
       >
         Check out the work I&apos;ve done
