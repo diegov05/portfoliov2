@@ -15,7 +15,7 @@ export const projects = [
     badge: "Spotify Clone",
     description: `Spotify Clone using Next.js 13, TypeScript, Supabase, RadixUI, Tailwindcss and setting up test payments with Stripe. Deployed with Vercel.`,
     githubLink: "https://github.com/diegov05/spotify-clone",
-    livePreview: "https://spotify-clone-black-five.vercel.app/",
+    livePreview: "https://spotify-clone-dv.vercel.app/",
     image: <SpotifyImage />,
   },
 ]
