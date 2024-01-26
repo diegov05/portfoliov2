@@ -27,6 +27,8 @@ export const SpotifyImage = () => {
 
       </div>
       <Image
+        width={640}
+        height={812.33}
         alt="spotify-project"
         src={spotify}
         className="
