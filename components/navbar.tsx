@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
     },
     {
       linkText: "Resume",
-      href: "https://drive.google.com/file/d/1BXNzmIEjpoO5yblMnznbC_jL3nXLnbCz/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1hB04yqwTOVi33FhKSqOxhL4U1YQ0rtGO/view?usp=sharing",
       target: "_a"
     },
     {
