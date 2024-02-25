@@ -1,74 +1,71 @@
 import Link from "next/link"
 import { Title } from "./title"
+import Image from "next/image"
+import hero from "@/assets/Designer.png"
 
 export const Header: React.FC = () => {
   return (
-    <header
-      data-aos="fade-up"
-      data-aos-duration="2000"
+    <div
       className="
-      mt-36
-      flex 
-      flex-col 
-      justify-center 
+      flex
+      flex-row
       items-center
-      gap-10
-      px-8
-      ">
-      <div
+      justify-between
+      mb-36
+      "
+    >
+      <header
+        data-aos="fade-up"
+        data-aos-duration="2000"
         className="
-        header-bg-gradient 
-        -z-10 
-        absolute 
-        h-[18rem]
-        w-[18rem]
-        sm:max-lg:h-[20rem]
-        sm:max-lg:w-[20rem]
-        lg:max-[3000px]:w-[30rem]
-        lg:max-[3000px]:h-[30rem]
-      " />
-      <div
-        className=" 
+        mt-36
         flex 
-        items-center 
-        justify-center 
         flex-col 
-        gap-2
+        justify-start 
+        items-start
+        gap-10
+        px-8
       ">
-        <p
-          className="
-          header-slogan 
-          text-[16px]
-          lg:max-[3000px]:text-[23px]
+        <div
+          className=" 
+          flex 
+          items-start 
+          justify-start 
+          flex-col 
+          gap-2
+      ">
+          <p
+            className="
+            header-slogan 
+            text-[16px]
+            lg:max-[3000px]:text-[23px]
           ">
-          DESIGN . CODE . DEPLOY
-        </p>
-        <Title className="text-center">
-          Engaging <br
-            className="hidden min-[500px]:block"
-          />
-          <span className="title-gradient">
-            Web Experiences.
-          </span>
-        </Title>
-      </div>
-      <h2
-        className="
+            DESIGN . CODE . DEPLOY
+          </p>
+          <Title className="text-start">
+            Engaging&nbsp;
+            <span className="title-gradient">
+              Web Experiences.
+            </span>
+          </Title>
+        </div>
+        <h2
+          className="
         text-secondary
         text-[16px]
         lg:max-[3000px]:text-[23px]
-        text-center
+        text-start
         ">
-        Revealing Code Insights, Debugging Glitches,
-        <br
-          className="hidden min-[500px]:block"
-        />
-        and Ensuring Seamless Functionality.
-      </h2>
-      <Link
-        href={"mailto:diegovs_@outlook.com"}
-        target="_a"
-        className="
+          Revealing Code Insights, Debugging Glitches,
+          <br
+            className="hidden min-[500px]:block"
+          />
+          and Ensuring Seamless Functionality.
+        </h2>
+        <Link
+          href={"mailto:diegovs_@outlook.com"}
+          target="_a"
+          className="
         header-button 
         text-[16px]
         lg:max-[3000px]:text-[23px]
@@ -78,10 +75,10 @@ export const Header: React.FC = () => {
         rounded-full 
         font-[500]
         ">
-        Contact Me
-      </Link>
-      <Link
-        className="
+          Contact Me
+        </Link>
+        <Link
+          className="
         border-b
         border-transparent
         hover:border-[#99e7ff]
@@ -91,10 +88,23 @@ export const Header: React.FC = () => {
         text-center
         font-[400]
         "
-        href={'/#projects'}
-      >
-        Check out the work I&apos;ve done
-      </Link>
-    </header>
+          href={'/#projects'}
+        >
+          Check out the work I&apos;ve done
+        </Link>
+      </header>
+      <Image
+        className="
+        absolute 
+        -z-20 
+        w-screen 
+        opacity-25
+        lg:max-[3000px]:opacity-100
+        lg:max-[3000px]:h-max
+        lg:max-[3000px]:static
+      "
+        src={hero}
+        alt="hero-image" />
+    </div>
   )
 }
