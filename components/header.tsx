@@ -44,6 +44,9 @@ export const Header: React.FC = () => {
           </p>
           <Title className="text-start">
             Engaging&nbsp;
+            <br
+              className="hidden min-[500px]:block"
+            />
             <span className="title-gradient">
               Web Experiences.
             </span>
@@ -57,9 +60,7 @@ export const Header: React.FC = () => {
         text-start
         ">
           Revealing Code Insights, Debugging Glitches,
-          <br
-            className="hidden min-[500px]:block"
-          />
+
           and Ensuring Seamless Functionality.
         </h2>
         <Link
@@ -98,9 +99,9 @@ export const Header: React.FC = () => {
         absolute 
         -z-20 
         w-screen 
-        opacity-25
-        lg:max-[3000px]:opacity-100
-        lg:max-[3000px]:h-max
+        opacity-80
+        lg:max-[3000px]:opacity-50
+        lg:max-[3000px]:w-[1050px]
         lg:max-[3000px]:static
       "
         src={hero}
