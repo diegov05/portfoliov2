@@ -60,7 +60,9 @@ export const Header: React.FC = () => {
         text-start
         ">
           Revealing Code Insights, Debugging Glitches,
-
+          <br
+            className="hidden min-[500px]:block"
+          />
           and Ensuring Seamless Functionality.
         </h2>
         <Link
