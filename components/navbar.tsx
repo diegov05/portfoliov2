@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
         z-40
         `}
       >
-        <ul className="border-0 w-full pt-20">
+        <ul className="border-0 w-full pt-20 h-max">
           {linksMap.map(({ linkText, href, target }) => (
             <li
               key={linkText}

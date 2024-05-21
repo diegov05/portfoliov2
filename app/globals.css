@@ -511,13 +511,7 @@ body {
 }
 
 nav ul {
-  background: linear-gradient(
-    103deg,
-    rgba(153, 231, 255, 0.2) 1%,
-    rgba(30, 30, 30, 0) 10%,
-    rgba(30, 30, 30, 0) 95%,
-    #99e7ff 108.35%
-  );
+  background: black;
   border: 1px solid #404a47;
 }
 
