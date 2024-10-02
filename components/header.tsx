@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
         ">
           Revealing Code Insights, Debugging Glitches,
           <br
-            className=""
+            className="hidden lg:hidden xl:block"
           />
           and Ensuring Seamless Functionality.
         </h2>
@@ -68,14 +68,14 @@ export const Header: React.FC = () => {
           href={"mailto:diegovs_@outlook.com"}
           target="_a"
           className="
-        header-button 
-        text-[16px]
-        lg:text-[23px]
-        py-2
-        px-12 
-        cursor-pointer 
-        rounded-full 
-        font-[500]
+          header-button 
+          text-[16px]
+          lg:text-[23px]
+          py-2
+          px-12 
+          cursor-pointer 
+          rounded-full 
+          font-[500]
         ">
           Contact Me
         </Link>
