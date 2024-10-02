@@ -13,12 +13,10 @@ export const TechStackCarousel = () => {
       className="
         flex
         flex-col
-        justify-center
-        items-center
-        min-[1025px]:max-[3000px]:flex-row
-        min-[1025px]:max-[3000px]:justify-center
-        min-[1025px]:max-[3000px]:items-center
+        min-[1025px]:flex-row
         tech-gradient
+        mt-32
+        xl:mt-48
     ">
       <div
         data-aos="fade-up"
@@ -28,32 +26,23 @@ export const TechStackCarousel = () => {
           flex-col
           gap-8
           p-16
-          lg:max-[3000px]:justify-start
-          lg:max-[3000px]:items-start
-          max-lg:justify-center
-          max-lg:items-center
         "
       >
         <div className="
           flex 
           flex-col 
           gap-4
-          lg:max-[3000px]:justify-start
-          lg:max-[3000px]:items-start
-          max-lg:justify-center
-          max-lg:items-center
         ">
           <h1
             className="
               title-gradient
-              lg:max-[3000px]:w-[30vw]
+              lg:w-[30vw]
               text-[#e9ecea]
               font-medium
               leading-normal
               text-[23px]
               sm:max-lg:text-[32px]
-              lg:max-[3000px]:text-[45px]
-              max-lg:text-center
+              lg:text-[45px]
               transition-all
           "
           >
@@ -61,13 +50,12 @@ export const TechStackCarousel = () => {
             Reliable Tech Stack
           </h1>
           <h2 className="
+          text-secondary
           text-[11px] 
           sm:max-lg:text-[16px] 
-          lg:max-[3000px]:text-[23px] 
+          lg:text-[23px] 
           font-light 
           text-[#E1F8FF] 
-          lg:max-[3000px]:text-start
-          text-center
           opacity-70
           ">
             I love working with these technologies. <br /> Efficiency empowered, building with <br /> speed and stability
@@ -80,8 +68,7 @@ export const TechStackCarousel = () => {
         hover:border-[#99e7ff]
         header-link
         text-[16px]
-        lg:max-[3000px]:text-[23px]
-        text-center
+        lg:text-[23px]
         font-normal"
           href={'/#projects'}
         >
@@ -92,13 +79,13 @@ export const TechStackCarousel = () => {
         h-full
         flex
         flex-col
-        min-[1025px]:max-[3000px]:flex-row
+        min-[1025px]:flex-row
         gap-4
     ">
         <div className="carousel">
           <div className="carousel-track">
             {repetitions.map((index) => (
-              <div key={index} className="flex flex-row min-[1025px]:max-[3000px]:flex-col gap-4">
+              <div key={index} className="flex flex-row min-[1025px]:flex-col gap-4">
                 {techStack.map((tech) => (
                   <div className="carousel-item min-w-[max-content]" key={tech.name}>
                     <div
@@ -116,7 +103,7 @@ export const TechStackCarousel = () => {
                         tech-title 
                         text-[11px] 
                         sm:max-lg:text-[16px] 
-                        lg:max-[3000px]:text-[23px] 
+                        lg:text-[23px] 
           ">
                         {tech.name}
                       </h3>
@@ -126,7 +113,7 @@ export const TechStackCarousel = () => {
                       tech-usage
                       text-[8px] 
                       sm:max-lg:text-[11px] 
-                      lg:max-[3000px]:text-[16px] 
+                      lg:text-[16px] 
                 ">
                       {tech.usage}
                     </p>
@@ -139,7 +126,7 @@ export const TechStackCarousel = () => {
         <div className="carousel">
           <div className="downwards-carousel-track">
             {repetitions.map((index) => (
-              <div key={index} className="flex flex-row min-[1025px]:max-[3000px]:flex-col gap-4">
+              <div key={index} className="flex flex-row min-[1025px]:flex-col gap-4">
                 {tools.map((tool) => (
                   <div className="carousel-item min-w-[max-content]" key={tool.name}>
                     <div
@@ -157,7 +144,7 @@ export const TechStackCarousel = () => {
                           tech-title 
                           text-[11px] 
                           sm:max-lg:text-[16px] 
-                          lg:max-[3000px]:text-[23px] 
+                          lg:text-[23px] 
         ">
                         {tool.name}
                       </h3>
@@ -167,7 +154,7 @@ export const TechStackCarousel = () => {
                         tech-usage
                         text-[8px] 
                         sm:max-lg:text-[11px] 
-                        lg:max-[3000px]:text-[16px] 
+                        lg:text-[16px] 
               ">
                       {tool.usage}
                     </p>

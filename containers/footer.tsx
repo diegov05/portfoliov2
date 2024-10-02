@@ -13,10 +13,6 @@ export const Footer = () => (
       flex 
       flex-col 
       gap-48
-      justify-center
-      items-center
-      md:max-[3000px]:justify-start 
-      md:max-[3000px]:items-start
       ">
       <div
         data-aos-duration="1000"
@@ -24,23 +20,18 @@ export const Footer = () => (
         flex
         flex-col
         gap-8
-        justify-center
-        items-center
-        md:max-[3000px]:justify-start 
-        md:max-[3000px]:items-start
       ">
-        <div className="flex flex-col gap-2 justify-center
-        items-center
-        md:max-[3000px]:justify-start 
-        md:max-[3000px]:items-start">
+        <div className="
+        flex 
+        flex-col 
+        gap-2 
+        ">
           <Badge content="Contact Me" />
           <Title
             className="
-          xl:max-[3000px]:text-start 
-          text-center
           text-[23px]
           sm:max-lg:text-[32px]
-          lg:max-[3000px]:text-[45px]
+          lg:text-[45px]
         ">
             Get In Touch
           </Title>
@@ -49,11 +40,9 @@ export const Footer = () => (
           className="
           text-secondary
           text-[16px]
-          lg:max-[3000px]:text-[32px]
-          sm:max-[3000px]:w-[35ch]
+          lg:text-[32px]
+          sm:w-[35ch]
           w-auto
-          md:max-[3000px]:text-start
-          text-center
       ">
           Open for job opportunities, open-source collaboration and freelance requests.
         </p>
@@ -64,7 +53,7 @@ export const Footer = () => (
         w-max
         header-button 
         text-[16px]
-        lg:max-[3000px]:text-[23px]
+        lg:text-[23px]
         py-2
         px-12 
         cursor-pointer 
@@ -84,14 +73,14 @@ export const Footer = () => (
         w-[18rem]
         sm:max-lg:h-[20rem]
         sm:max-lg:w-[20rem]
-        lg:max-[3000px]:w-[30rem]
-        lg:max-[3000px]:h-[30rem]
+        lg:w-[30rem]
+        lg:h-[30rem]
       " />
         <Image
           className="
         w-[20rem]
         md:max-lg:w-[25rem]
-        lg:max-[3000px]:w-[40rem]
+        lg:w-[40rem]
         h-auto
         "
           alt="phone"

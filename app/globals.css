@@ -619,7 +619,7 @@ nav ul {
 .svg-size {
   @layer components {
     .svg-size {
-      @apply md:max-[3000px]:h-6 sm:h-4 h-4 w-auto;
+      @apply md:h-6 sm:h-4 h-4 w-auto;
     }
   }
 }

@@ -3,13 +3,13 @@
 import { useState } from "react"
 
 import { SliderContent } from "./slider-content";
-import data from "./data/data.json"
+import { experiences as data } from "./data/data";
 import "./styles/slider.css"
 
 
 export const Slider = () => {
 
-  const [selected, setSelected] = useState("MediaSoft")
+  const [selected, setSelected] = useState("Neutron Technology Group")
   const [index, setIndex] = useState(0)
 
   const handleClick = (selectedCompany: string) => {
@@ -25,13 +25,13 @@ export const Slider = () => {
       className="
       flex 
       flex-col 
-      md:max-[3000px]:flex-row 
+      md:flex-row 
       gap-16 
       w-full
       max-md:items-center
       max-md:justify-center
     ">
-      <ul className="flex flex-row md:max-[3000px]:flex-col">
+      <ul className="flex flex-row md:flex-col">
         {data.map(({ company }) => (
           <li
             onClick={() => handleClick(company)}
@@ -42,7 +42,7 @@ export const Slider = () => {
                 : ""}
              text-[11px]
              sm:max-lg:text-[16px]
-             lg:max-[3000px]:text-[23px]
+             lg:text-[23px]
             `}
             key={company}
           >
@@ -54,6 +54,7 @@ export const Slider = () => {
         role={data[index].role}
         company={data[index].company}
         date={data[index].date}
+        bulletPoints={data[index].bulletPoints}
       />
     </section>
   )

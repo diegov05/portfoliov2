@@ -15,7 +15,7 @@ export const Title: React.FC<TitleProps> = ({ children, className }) => {
         leading-normal
         text-[32px]
         sm:max-lg:text-[45px]
-        lg:max-[3000px]:text-[64px]
+        lg:text-[64px]
       `}>
       {children}
     </h1>

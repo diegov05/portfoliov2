@@ -23,6 +23,7 @@ export const Header: React.FC = () => {
         flex-col 
         justify-start 
         items-start
+        w-full
         gap-10
         px-8
       ">
@@ -38,30 +39,28 @@ export const Header: React.FC = () => {
             className="
             header-slogan 
             text-[16px]
-            lg:max-[3000px]:text-[23px]
+            lg:text-[23px]
           ">
             DESIGN . CODE . DEPLOY
           </p>
-          <Title className="text-start">
+          <Title className="text-start w-full">
             Engaging&nbsp;
             <br
-              className="hidden min-[500px]:block"
+              className="lg:hidden xl:block"
             />
-            <span className="title-gradient">
-              Web Experiences.
-            </span>
+            Web Experiences.
           </Title>
         </div>
         <h2
           className="
         text-secondary
         text-[16px]
-        lg:max-[3000px]:text-[23px]
+        lg:text-[23px]
         text-start
         ">
           Revealing Code Insights, Debugging Glitches,
           <br
-            className="hidden min-[500px]:block"
+            className=""
           />
           and Ensuring Seamless Functionality.
         </h2>
@@ -71,7 +70,7 @@ export const Header: React.FC = () => {
           className="
         header-button 
         text-[16px]
-        lg:max-[3000px]:text-[23px]
+        lg:text-[23px]
         py-2
         px-12 
         cursor-pointer 
@@ -87,7 +86,7 @@ export const Header: React.FC = () => {
         hover:border-[#99e7ff]
         header-link
         text-[16px]
-        lg:max-[3000px]:text-[23px]
+        lg:text-[23px]
         text-center
         font-[400]
         "
@@ -102,9 +101,9 @@ export const Header: React.FC = () => {
         -z-20 
         w-screen 
         opacity-80
-        lg:max-[3000px]:opacity-50
-        lg:max-[3000px]:w-[1050px]
-        lg:max-[3000px]:static
+        lg:opacity-50
+        lg:w-[1050px]
+        lg:static
       "
         src={hero}
         alt="hero-image" />

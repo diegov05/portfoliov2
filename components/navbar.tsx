@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
       <nav className={`
         fixed
         flex
-        sm:max-[3000px]:hidden
+        sm:hidden
         ${open ? "h-[100vh] w-screen" : "h-[100vh] w-0"}
         right-0
         top-6
@@ -80,8 +80,8 @@ export const Navbar: React.FC = () => {
         fixed
         justify-between 
         items-center 
-        sm:max-[3000px]:items-center 
-        sm:max-[3000px]:justify-between
+        sm:items-center 
+        sm:justify-between
         p-8
         backdrop-blur-md
         bg-[#050505]/50
@@ -100,7 +100,7 @@ export const Navbar: React.FC = () => {
         ">
           DV
         </Link>
-        <button onClick={handleOpen} className="block sm:max-[3000px]:hidden">
+        <button onClick={handleOpen} className="block sm:hidden">
           {!open ?
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-[#E9ECEA]">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -110,10 +110,10 @@ export const Navbar: React.FC = () => {
             </svg>
           }
         </button>
-        <div className="sm:max-[3000px]:flex hidden justify-center items-center w-full">
+        <div className="sm:flex hidden justify-center items-center w-full">
           <ul className="
         hidden
-        sm:max-[3000px]:flex 
+        sm:flex 
         flex-row 
         gap-8 
         py-2

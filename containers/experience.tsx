@@ -23,17 +23,11 @@ export const ExperienceSection = () => {
         flex
         flex-col
         gap-4
-        justify-center
-        items-center
-        md:max-[3000px]:justify-start 
-        md:max-[3000px]:items-start
-        
         ">
         <Badge content="Work Experience" />
         <Title
           className="
-          md:max-[3000px]:text-start 
-          text-center
+          text-start
           text-[23px]
           sm:max-lg:text-[32px]
           lg:max-[3000px]:text-[45px]

@@ -11,10 +11,9 @@ export const LearnMoreSection = () => {
       p-8
       flex
       flex-col
-      xl:max-[3000px]:flex-row
+      xl:flex-row
       justify-between
-      items-center
-      xl:max-[3000px]:items-start
+      items-start
       overflow-hidden
       gap-16
       ">
@@ -25,20 +24,17 @@ export const LearnMoreSection = () => {
         flex
         flex-col
         gap-4
-        justify-center
-        items-center
-        xl:max-[3000px]:justify-start 
-        xl:max-[3000px]:items-start
+        justify-start
+        items-start
       ">
         <Badge content="About Me" />
         <Title
           className="
           w-[10ch] 
-          xl:max-[3000px]:text-start 
-          text-center
+          text-start
           text-[23px]
           sm:max-lg:text-[32px]
-          lg:max-[3000px]:text-[45px]
+          lg:text-[45px]
         ">
           Learn More About Me
         </Title>
@@ -46,13 +42,14 @@ export const LearnMoreSection = () => {
           className="
           text-secondary
           text-[16px]
-          lg:max-[3000px]:text-[32px]
+          lg:text-[32px]
           w-auto
-          sm:max-[3000px]:w-[25ch]
-          xl:max-[3000px]:text-start
-          text-center
+          sm:w-[25ch]
+          text-start
       ">
-          Hey, I&apos;m Diego! 👋 A Frontend Engineer with hands-on experience in web application development, blending front-end and back-end systems using the MERN stack. Skilled in crafting responsive interfaces with React and TypeScript, I focus on user-friendly designs.
+          Hey, I&apos;m Diego! 👋 I&apos;m a full-stack web developer with over 2 years of experience
+          specialized in creating engaging, eye-catching and
+          highly-performant web applications.
         </p>
       </div>
       <Image
@@ -61,7 +58,7 @@ export const LearnMoreSection = () => {
         className="
         w-[30rem]
         sm:max-lg:w-[30rem]
-        lg:max-[3000px]:w-[40rem]
+        lg:w-[40rem]
         h-auto
         "/>
     </section>
