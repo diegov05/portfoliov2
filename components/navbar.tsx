@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
     },
     {
       linkText: "Resume",
-      href: "https://drive.google.com/file/d/1hB04yqwTOVi33FhKSqOxhL4U1YQ0rtGO/view?usp=sharing",
+      href: "https://drive.google.com/file/d/18dyWnBgJrMCHogI2CmuBxXexloqtCAix/view?usp=sharing",
       target: "_a"
     },
     {
@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
         justify-center 
         border">
             <li><Link className="navbar-links-text" href="/#learn-more">About me</Link></li>
-            <li><Link className="navbar-links-text" target="_a" href="hhttps://drive.google.com/file/d/1hB04yqwTOVi33FhKSqOxhL4U1YQ0rtGO/view?usp=sharing">Resume</Link></li>
+            <li><Link className="navbar-links-text" target="_a" href="https://drive.google.com/file/d/18dyWnBgJrMCHogI2CmuBxXexloqtCAix/view?usp=sharing">Resume</Link></li>
             <li><Link className="navbar-links-text" href="/#experience">Experience</Link></li>
             <li><Link className="navbar-links-text" href="/#projects">My Work</Link></li>
             <li><Link className="navbar-links-text" href="/#contact">Contact Me</Link></li>
