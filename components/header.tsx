@@ -1,112 +1,71 @@
+import { SparklesIcon } from "lucide-react"
+import { Button } from "./ui/button"
+import PixelBlast from "./ui/pixel-blast"
 import Link from "next/link"
-import { Title } from "./title"
-import Image from "next/image"
-import hero from "@/assets/Designer.png"
+import SplitText from "./ui/split-text"
+import FadeContent from "./ui/fade-content"
 
 export const Header: React.FC = () => {
   return (
-    <div
-      className="
-      flex
-      flex-row
-      items-center
-      justify-between
-      mb-36
-      "
-    >
-      <header
-        data-aos="fade-up"
-        data-aos-duration="2000"
-        className="
-        mt-36
-        flex 
-        flex-col 
-        justify-start 
-        items-start
-        w-full
-        gap-10
-        px-8
-      ">
-        <div
-          className=" 
-          flex 
-          items-start 
-          justify-start 
-          flex-col 
-          gap-2
-      ">
-          <p
-            className="
-            header-slogan 
-            text-[16px]
-            lg:text-[23px]
-          ">
-            DESIGN . CODE . DEPLOY
-          </p>
-          <Title className="text-start w-full">
-            Engaging&nbsp;
-            <br
-              className="lg:hidden xl:block"
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+      <div id="home" style={{ width: '100%', height: '100dvh', position: 'relative' }}>
+        <PixelBlast
+          variant="square"
+          pixelSize={2}
+          color="#008236"
+          patternScale={3}
+          patternDensity={1.2}
+          pixelSizeJitter={0.5}
+          enableRipples
+          rippleSpeed={0.4}
+          rippleThickness={0.12}
+          rippleIntensityScale={1.5}
+          liquid
+          liquidStrength={0.12}
+          liquidRadius={1.2}
+          liquidWobbleSpeed={5}
+          speed={2}
+          edgeFade={0.25}
+          transparent
+          className="opacity-20"
+        />
+
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start px-8 md:px-16 2xl:px-28">
+          <h3 className="text-lg font-medium font-mono text-black/60 mb-6">
+            [ DESIGN . CODE . DELIVER ]
+          </h3>
+          <h1 className="text-7xl font-medium font-sans tracking-tighter text-black mb-6">
+            <SplitText
+              text="Hello, I'm Diego!"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: -2 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
             />
-            Web Experiences.
-          </Title>
+          </h1>
+          <p className="text-base md:text-xl font-normal font-sans text-black opacity-70 mb-6 max-w-xl text-balance text-green">
+            I'm a mid-level software engineer with a focus on building high-performance, engaging & scalable digital experiences.
+          </p>
+          <Button size={'lg'} asChild variant="default" className="font-sans mb-4 text-base">
+            <Link href="#contact">
+              Get in touch
+              <SparklesIcon className="-me-1 opacity-80" size={16} aria-hidden="true" />
+            </Link>
+          </Button>
+
+          <Button size={'lg'} asChild variant="link" className="font-sans mb-6 px-0 text-green-700 text-base">
+            <Link href="#projects">
+              Check out my work {'->'}
+            </Link>
+          </Button>
         </div>
-        <h2
-          className="
-        text-secondary
-        text-[16px]
-        lg:text-[23px]
-        text-start
-        ">
-          Revealing Code Insights, Debugging Glitches,
-          <br
-            className="hidden lg:hidden xl:block"
-          />
-          and Ensuring Seamless Functionality.
-        </h2>
-        <Link
-          href={"mailto:diegovs_@outlook.com"}
-          target="_a"
-          className="
-          header-button 
-          text-[16px]
-          lg:text-[23px]
-          py-2
-          px-12 
-          cursor-pointer 
-          rounded-full 
-          font-[500]
-        ">
-          Contact Me
-        </Link>
-        <Link
-          className="
-        border-b
-        border-transparent
-        hover:border-[#99e7ff]
-        header-link
-        text-[16px]
-        lg:text-[23px]
-        text-center
-        font-[400]
-        "
-          href={'/#projects'}
-        >
-          Check out the work I&apos;ve done
-        </Link>
-      </header>
-      <Image
-        className="
-        absolute 
-        -z-20 
-        w-screen 
-        opacity-80
-        lg:opacity-50
-        lg:w-[1050px]
-        lg:static
-      "
-        src={hero}
-        alt="hero-image" />
-    </div>
+
+      </div>
+    </FadeContent>
   )
 }

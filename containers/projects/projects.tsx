@@ -1,197 +1,264 @@
-import { Badge } from "@/components/badge"
-import { Title } from "@/components/title"
-import { projects } from "./data/projectsData"
+"use client";
+import { useRef } from "react";
 
-export const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="
-        flex
-        flex-col
-        gap-8
-        mt-32
-        xl:mt-48
-        px-8
-    ">
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        className="
-        flex
-        flex-col
-        gap-4
-        xl:justify-end 
-        xl:items-end
-      ">
-        <Badge content="My Work" />
-        <Title
-          className="
-          xl:text-end 
-          text-center
-          text-[23px]
-          sm:max-lg:text-[32px]
-          lg:text-[45px]
-        ">
-          Featured Projects
-        </Title>
-      </div>
-      {projects.map((project) => (
-        <div
-          key={project.name}
-          className="
-          mt-12
-          md:mt-32
-          flex
-          flex-col
-          md:flex-row
-          justify-between
-          items-start
-          overflow-hidden
-          gap-16        
-          ">
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            className="
-            flex
-            flex-col
-            gap-4
-            md:gap-8
-          ">
-            <div
-              className="
-              flex
-              flex-col
-              gap-4
-      ">
-              <div
-                className="
-              w-max
-              py-1
-              px-8 
-              badge-gradient
-              border
-              border-[#404A47]
-              rounded-full
-              flex
-              flex-col
-    ">
-                <span
-                  className="
-                badge-text 
-                text-[8px]
-                sm:max-lg:text-[11px]
-                lg:text-[16px]
-              ">
-                  {project.badge}
-                </span>
-              </div>
-              <h1
-                className="
-                title-gradient
-              font-medium
-              leading-normal
-              text-[23px]
-              sm:max-lg:text-[32px]
-              lg:text-[45px]
-              transition-all
-            ">
-                {project.name}
-              </h1>
-            </div>
-            <p
-              className="
-              text-secondary
-              text-[11px]
-              sm:max-lg:text-[16px]
-              lg:text-[23px]
-              w-[25ch]
-          ">
-              {project.description}
-            </p>
-            <div
-              className="
-              flex 
-              flex-row 
-              gap-2
-            ">
-              <a
-                className="
-                w-max
-                flex
-                flex-row
-                items-center
-                text-white
-                gap-2
-                py-1
-                px-2
-                md:py-2
-                md:px-4
-                border-[#E1F8FFB2]
-                border
-                md:border-2
-                rounded-lg
-                transition
-                duration-300
-                opacity-50
-                hover:opacity-100
-                "
-                target="_a"
-                href={project.githubLink}
-              >
-                <span className="
-                text-[8px] 
-                sm:max-lg:text-[11px] 
-                lg:text-[16px] 
-                ">
-                  Visit Repo
-                </span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="svg-size">
-                  <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" />
-                </svg>
-              </a>
-              {project.livePreview &&
-                <a
-                  className="
-                   w-max
-                  flex
-                  flex-row
-                  items-center
-                  text-white
-                  gap-2
-                  py-1
-                  px-2
-                  md:py-2
-                  md:px-4
-                  border-[#E1F8FFB2]
-                  border
-                  md:border-2
-                  rounded-lg
-                  transition
-                  duration-300
-                  opacity-50
-                  hover:opacity-100
-                  "
-                  target="_a"
-                  href={project.livePreview}
-                >
-                  <span className="
-                  text-[8px] 
-                  sm:max-lg:text-[11px] 
-                  lg:text-[16px] 
-                  ">
-                    Live Preview
-                  </span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="svg-size">
-                    <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" />
-                  </svg>
-                </a>}
-            </div>
-          </div>
-          {project.image}
-        </div>
-      ))}
-    </section>
-  )
+import { projects } from "./data/projectsData";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import './projects.css';
+import { Badge } from "@/components/badge";
+import { Title } from "@/components/title";
+
+interface Project {
+  name: string;
+  badge: string;
+  description: string;
+  githubLink: string;
+  livePreview: string;
+  image: React.ReactNode;
 }
+
+export default function Work() {
+  const workContainerRef = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const createWorkItem = (project: Project) => {
+        const workItem = document.createElement("div");
+        workItem.className = "work-item";
+        workItem.innerHTML = `
+        <a href="${project.githubLink}" class="work-item-link">
+          <div class="work-item-img">
+            <img src="${project.image}" alt="${project.name}" />
+          </div>
+          <div class="work-item-copy">
+            <h3 class="text-white font-sans">${project.name}</h3>
+            <p class="text-white font-sans opacity-80">${project.description}</p>
+          </div>
+        </a>
+      `;
+        return workItem;
+      };
+
+      const workContainer = workContainerRef.current;
+
+      // @ts-ignore
+      workContainer.innerHTML = "";
+
+      for (let i = 0; i < projects.length; i += 2) {
+        const row = document.createElement("div");
+        row.className = "row";
+
+        const leftItemIndex = i;
+        const rightItemIndex = i + 1;
+
+        row.appendChild(createWorkItem(projects[leftItemIndex]));
+
+        if (rightItemIndex < projects.length) {
+          row.appendChild(createWorkItem(projects[rightItemIndex]));
+        }
+
+        // @ts-ignore
+        workContainer.appendChild(row);
+      }
+
+      gsap.set(".work-item", {
+        y: 1000,
+      });
+
+      document.querySelectorAll(".row").forEach((row) => {
+        const workItems = row.querySelectorAll(".work-item");
+
+        workItems.forEach((item, itemIndex) => {
+          const isLeftProjectItem = itemIndex === 0;
+          gsap.set(item, {
+            rotation: isLeftProjectItem ? -60 : 60,
+            transformOrigin: "center center",
+          });
+        });
+
+        ScrollTrigger.create({
+          trigger: row,
+          start: "top 50%",
+          onEnter: () => {
+            gsap.to(workItems, {
+              y: 0,
+              rotation: 0,
+              duration: 1,
+              ease: "power4.out",
+              stagger: 0.25,
+            });
+          },
+        });
+      });
+    },
+    { scope: workContainerRef }
+  );
+
+  return (
+    <section className="bg-[#050505]">
+      <div className="mx-auto text-center w-max mb-16">
+        <Badge content="[ Selected Projects ]" className="text-green-200 mx-auto mb-4" />
+        <Title className="text-white font-sans tracking-tighter">Builds & Experiments</Title>
+      </div>
+      <div className="work" id="projects" ref={workContainerRef}></div>
+    </section>
+  );
+}
+
+
+
+
+
+// import { Badge } from "@/components/badge"
+// import { Title } from "@/components/title"
+// import { projects } from "./data/projectsData"
+// import { Button } from "@/components/ui/button"
+// import Link from "next/link"
+// import { ArrowUpRight, Github } from "lucide-react"
+
+// export const Projects = () => {
+//   return (
+//     <section
+//       id="projects"
+//       className="
+//         flex
+//         flex-col
+//         gap-8
+//         pt-32
+//         xl:pt-48
+//         md:px-28
+//         px-16
+//         bg-[#050505]
+//     ">
+//       <div
+//         className="
+//         flex
+//         flex-col
+//         gap-4
+//       ">
+//         <Badge content="[ My Work ]" className="text-green-400" />
+//       </div>
+//       {projects.map((project) => (
+//         <div
+//           key={project.name}
+//           className="
+//           mt-12
+//           md:mt-32
+//           flex
+//           flex-col
+//           md:flex-row
+//           justify-between
+//           items-start
+//           overflow-hidden
+//           gap-16
+//           ">
+//           <div
+//             data-aos="fade-up"
+//             data-aos-duration="1000"
+//             className="
+//             flex
+//             flex-col
+//             gap-4
+//             md:gap-8
+//           ">
+//             <div
+//               className="
+//               flex
+//               flex-col
+//               gap-4
+//       ">
+//               <div
+//                 className="
+//               w-max
+//               badge-gradient
+//               rounded-full
+//               flex
+//               flex-col
+//     ">
+//                 <span
+//                   className="
+//                 uppercase
+//                 font-medium
+//                 font-mono
+//                 badge-text
+//                 text-sm
+//                 sm:text-sm
+//                 lg:text-base
+//                 px-4
+//                 py-1
+//                 rounded-full
+//                 text-black
+//                 bg-green-400
+//               ">
+//                   {project.badge}
+//                 </span>
+//               </div>
+//               <h3
+//                 className="
+//                 title-gradient
+//               font-medium
+//               leading-normal
+//               text-[23px]
+//               sm:max-lg:text-[32px]
+//               lg:text-6xl
+//               transition-all
+//               font-sans
+//               tracking-tighter
+//               text-white
+//             ">
+//                 {project.name}
+//               </h3>
+//             </div>
+//             <p
+//               className="
+//               text-white
+//               font-normal
+//               text-sm
+//               md:text-base
+//               font-sans
+//               opacity-80
+//               max-w-xl
+//               text-balance
+//           ">
+//               {project.description}
+//             </p>
+//             <div
+//               className="
+//               flex
+//               flex-row
+//               gap-2
+//             ">
+//               <Button
+//                 className="font-sans"
+//                 asChild
+//                 variant="default"
+//               >
+//                 <Link href={project.githubLink}>
+//                   Visit Repo
+//                   <Github className="size-4" />
+//                 </Link>
+//               </Button>
+//               {project.livePreview &&
+//                 <Button
+//                   asChild
+//                   variant="secondary"
+//                   className="font-sans"
+//                 >
+//                   <Link href={project.livePreview}>
+//                     Live Preview
+//                     <ArrowUpRight className="size-4" />
+//                   </Link>
+//                 </Button>
+//               }
+//             </div>
+//           </div>
+//           {project.image}
+//         </div>
+//       ))}
+//     </section>
+//   )
+// }

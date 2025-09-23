@@ -12,13 +12,13 @@ import { VercelLogo } from "../icons/vercel-logo";
 export const tools = [
   {
     name: "Figma",
-    usage: "Collaborative UI design tool for teams, allowing real-time cloud-based design and prototyping.",
+    usage: "Collaborative UI design tool for creating and prototyping interfaces.",
     icon: <FigmaLogo className="max-md:w-6" />,
   },
   {
     name: "Git",
-    usage: "Distributed version control system allowing efficient tracking of changes, collaboration among developers, and version management of code repositories.",
-    icon: < GitLogo className="max-md:w-6" />,
+    usage: "Distributed version control system for tracking code changes and collaboration.",
+    icon: <GitLogo className="max-md:w-6" />,
   },
   {
     name: "GitHub",
@@ -27,37 +27,37 @@ export const tools = [
   },
   {
     name: "Supabase",
-    usage: "Open-source platform using PostgreSQL for real-time databases and serverless functions, aiding efficient app development.",
+    usage: "Open-source backend platform with real-time databases and serverless functions.",
     icon: <SupabaseLogo className="max-md:w-6" />,
   },
   {
     name: "Firebase",
-    usage: "Google's all-in-one platform for mobile and web apps, covering hosting, authentication, databases, and analytics in the cloud.",
+    usage: "Google platform for hosting, authentication, databases, and analytics in apps.",
     icon: <FirebaseLogo className="max-md:w-6" />,
   },
   {
     name: "Vercel",
-    usage: "Cloud platform for deploying web applications with seamless integration, offering scalability, performance, and developer-friendly workflows for deployment.",
-    icon: < VercelLogo className="max-md:w-6" />,
+    usage: "Cloud platform for deploying and scaling web applications with ease.",
+    icon: <VercelLogo className="max-md:w-6" />,
   },
   {
     name: "AWS",
-    usage: "Amazon's cloud platform offering a wide range of services for scalable app development and deployment.",
+    usage: "Amazon's cloud platform offering services for scalable app development and hosting.",
     icon: <AWSLogo className="max-md:w-6" />,
   },
   {
     name: "Netlify",
-    usage: "Streamlined cloud platform for easy web development and hosting with global content delivery.",
+    usage: "Cloud platform for simple web development, hosting, and global content delivery.",
     icon: <NetlifyLogo className="max-md:w-6" />,
   },
   {
     name: "Notion",
-    usage: "Versatile workspace for collaborative note-taking and task management.",
-    icon: < NotionLogo className="max-md:w-6" />,
+    usage: "Workspace app for collaborative note-taking, documentation, and task management.",
+    icon: <NotionLogo className="max-md:w-6" />,
   },
   {
     name: "Docker",
-    usage: "Simplifies app development, shipping, and deployment using containers for consistent performance across environments.",
+    usage: "Tool for building, running, and deploying apps consistently using containers.",
     icon: <DockerLogo className="max-md:w-6" />,
   },
 ]

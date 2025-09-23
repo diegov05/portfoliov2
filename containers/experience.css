@@ -1,0 +1,116 @@
+.intro,
+.outro {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro h1,
+.outro h1 {
+  width: 60%;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25svh;
+}
+
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 1.5em;
+}
+
+.card-marquee {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+.card-marquee .marquee {
+  display: flex;
+}
+.card-marquee .marquee h1 {
+  white-space: nowrap;
+  font-size: 10vw;
+  font-weight: 600;
+  margin-right: 30px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.card-img {
+  position: absolute;
+  inset: 0;
+  border-radius: 150px;
+  overflow: hidden;
+}
+.card-img img {
+  transform: scale(2);
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+.card-content .card-title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-content .card-description {
+  text-align: center;
+  width: 40%;
+  margin-bottom: 3em;
+  position: relative;
+  transform: translateX(40px);
+  opacity: 0;
+}
+
+.card:nth-child(2) {
+  margin-top: 50vh;
+}
+
+.char {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.char span {
+  transform: translateX(100%);
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  .intro h1,
+  .outro h1 {
+    width: 100%;
+  }
+  .card-content .card-description {
+    width: 90%;
+  }
+}

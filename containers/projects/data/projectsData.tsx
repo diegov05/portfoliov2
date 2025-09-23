@@ -8,7 +8,7 @@ export const projects = [
     description: `Upgraded version of Filmaster, a Responsive Modern UI/UX Movie Catalog Application using React, TypeScript, Tailwind, Firebase Hosting and Firestore Database.`,
     githubLink: "https://github.com/diegov05/filmasterV2",
     livePreview: "https://filmasterv2.web.app/",
-    image: <FilmasterImage />,
+    image: "/assets/projects-images/filmaster.png",
   },
   {
     name: "Spotify Clone",
@@ -16,6 +16,6 @@ export const projects = [
     description: `Spotify Clone using Next.js 13, TypeScript, Supabase, RadixUI, Tailwindcss and setting up test payments with Stripe. Deployed with Vercel.`,
     githubLink: "https://github.com/diegov05/spotify-clone",
     livePreview: "https://spotify-clone-dv.vercel.app/",
-    image: <SpotifyImage />,
+    image: "/assets/projects-images/spotify.png",
   },
 ]

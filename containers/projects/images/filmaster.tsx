@@ -1,42 +1,16 @@
 import Image from "next/image";
-import filmaster from "@/assets/projects-images/filmaster.png"
 
 export const FilmasterImage = () => {
   return (
-    <span>
-      <div
-        className="
-        absolute
-        bg-gradient-radial
-        from-[#1E1E1E00]
-        to-[#E499FF33]
-        via-[#E499FF]
-        lg:max-xl:right-52
-        lg:right-80
-        blur-3xl
-        md:max-lg:w-[20rem]
-        md:max-lg:h-[25rem]
-        lg:max-xl:w-[25rem]
-        lg:max-xl:h-[25rem]
-        lg:w-[30rem]
-        lg:h-[35rem]
-        opacity-20
-        rounded-full
-        -z-10
-      ">
-
-      </div>
-      <Image
-        priority
-        alt="filmaster-project"
-        src={filmaster}
-        className="
-        w-[20rem]
-        md:max-lg:w-[25rem]
-        lg:w-[40rem]
-        h-auto
+    <Image
+      width={1050}
+      height={1050}
+      priority
+      alt="filmaster-project"
+      src={"/assets/projects-images/filmaster.png"}
+      className="
+        h-96 w-auto
       " />
-    </span>
   );
 }
 

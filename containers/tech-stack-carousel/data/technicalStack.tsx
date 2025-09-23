@@ -11,56 +11,47 @@ import { TypeScriptLogo } from "../icons/ts-logo";
 export const techStack = [
   {
     name: "React",
-    usage: `JavaScript library for creating reusable components and building dynamic user interfaces with efficiency.`,
+    usage: "JavaScript library for building reusable UI components efficiently.",
     icon: <ReactLogo className="max-md:w-6" />,
-
   },
   {
     name: "Tailwindcss",
-    usage: "Streamlined, customizable CSS framework with pre-defined utility classes for rapid web development.",
-    icon: < TailwindLogo className="max-md:w-6" />,
-
+    usage: "Utility-first CSS framework for fast, customizable styling.",
+    icon: <TailwindLogo className="max-md:w-6" />,
   },
   {
     name: "Next.js",
-    usage: "React framework offering server-side rendering, simplifying the creation of performant and SEO-friendly web applications.",
-    icon: <NextLogo className="max-md:w-8" />,
-
+    usage: "React framework with server-side rendering for SEO-friendly apps.",
+    icon: <NextLogo className="max-md:w-6 mr-2" />,
   },
   {
     name: "TypeScript",
-    usage: "Adds static typing to JavaScript for more robust code.",
+    usage: "Superset of JavaScript adding static typing and tooling.",
     icon: <TypeScriptLogo className="max-md:w-7" />,
-
   },
   {
     name: "Express",
-    usage: "Lightweight Node.js framework for building web servers and APIs with simple routing and middleware.",
+    usage: "Minimal Node.js framework for APIs and web servers.",
     icon: <ExpressLogo className="max-md:w-7" />,
-
   },
   {
     name: "Node.js",
-    usage: "JavaScript runtime for scalable server-side applications with high performance.",
+    usage: "JavaScript runtime for scalable, high-performance servers.",
     icon: <NodeLogo className="max-md:w-6" />,
-
   },
   {
     name: "PostgreSQL",
-    usage: "Powerful open-source relational database for versatile applications, known for reliability and advanced features.",
+    usage: "Reliable open-source relational database with rich features.",
     icon: <PostgreLogo className="max-md:w-7" />,
-
   },
   {
     name: "Prisma",
-    usage: "Streamlined database toolkit for efficient, type-safe queries, boosting developer productivity.",
+    usage: "Database toolkit for type-safe queries and productivity.",
     icon: <PrismaLogo className="max-md:w-7" />,
-
   },
   {
     name: "Astro",
-    usage: "High-performance site builder combining static and dynamic rendering for fast, SEO-friendly websites.",
+    usage: "Site builder for fast, SEO-friendly static and dynamic pages.",
     icon: <AstroLogo className="max-md:w-7" />,
-
   },
 ];

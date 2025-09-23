@@ -1,135 +1,163 @@
-'use client'
+"use client"
+import { Button } from "@/components/ui/button"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { SparklesIcon } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
-import Link from "next/link";
-import { useState } from "react"
+// Navigation links array to be used in both desktop and mobile menus
+const navigationLinks = [
+  { href: "#home", label: "About me", id: "home" },
+  { href: "#learn-more", label: "Services", id: "learn-more" },
+  { href: "https://drive.google.com/file/d/1RFel7SbsZCyoeedG1cnIk44FpmF6CLV9/view?usp=sharing", label: "Resume", target: "_blank", id: "resume" },
+  { href: "#experience", label: "Experience", id: "experience" },
+  { href: "#projects", label: "Projects", id: "projects" },
+  { href: "#contact", label: "Contact", id: "contact" },
+]
 
-export const Navbar: React.FC = () => {
-  const [open, setOpen] = useState(false);
+export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("home")
 
-  const handleOpen = () => {
-    setOpen(!open)
-  }
-
-  const linksMap = [
-    {
-      linkText: "About Me",
-      href: "/#learn-more"
-    },
-    {
-      linkText: "Resume",
-      href: "https://drive.google.com/file/d/18dyWnBgJrMCHogI2CmuBxXexloqtCAix/view?usp=sharing",
-      target: "_a"
-    },
-    {
-      linkText: "Experience",
-      href: "/#experience"
-    },
-    {
-      linkText: "My Work",
-      href: "/#projects"
-    },
-    {
-      linkText: "Contact Me",
-      href: "/#contact"
-    },
-  ]
-
-  return (
-    <>
-      <nav className={`
-        fixed
-        flex
-        sm:hidden
-        ${open ? "h-[100vh] w-screen" : "h-[100vh] w-0"}
-        right-0
-        top-6
-        transition-all
-        duration-1000
-        bg-[#050505]/90
-        backdrop-blur-sm
-        z-40
-        `}
-      >
-        <ul className="border-0 w-full pt-20 h-max">
-          {linksMap.map(({ linkText, href, target }) => (
-            <li
-              key={linkText}
-              className="
-              navbar-links-item 
-              flex 
-              flex-row 
-              items-center 
-              gap-4 
-              mobile-nav-gradient
-              "
-            >
-              <Link target={target} onClick={() => setOpen(false)} href={href}>{linkText}</Link>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 text-slate-600">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <nav
-        className="
-        z-50
-        w-full
-        flex
-        fixed
-        justify-between 
-        items-center 
-        sm:items-center 
-        sm:justify-between
-        p-8
-        backdrop-blur-md
-        bg-[#050505]/50
-        mobile-nav-gradient
-        border-opacity-50
-      ">
-        <Link href={'/'} className="
-          text-[#e9ecea]
-            py-2
-            px-4
-            header-button
-            transition
-            hover:opacity-80
-            rounded-md
-            font-black
-        ">
-          DV
-        </Link>
-        <button onClick={handleOpen} className="block sm:hidden">
-          {!open ?
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-[#E9ECEA]">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 text-[#E9ECEA]">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
           }
-        </button>
-        <div className="sm:flex hidden justify-center items-center w-full">
-          <ul className="
-        hidden
-        sm:flex 
-        flex-row 
-        gap-8 
-        py-2
-        px-8   
-        rounded-3xl 
-        items-center 
-        justify-center 
-        border">
-            <li><Link className="navbar-links-text" href="/#learn-more">About me</Link></li>
-            <li><Link className="navbar-links-text" target="_a" href="https://drive.google.com/file/d/18dyWnBgJrMCHogI2CmuBxXexloqtCAix/view?usp=sharing">Resume</Link></li>
-            <li><Link className="navbar-links-text" href="/#experience">Experience</Link></li>
-            <li><Link className="navbar-links-text" href="/#projects">My Work</Link></li>
-            <li><Link className="navbar-links-text" href="/#contact">Contact Me</Link></li>
-          </ul>
+        })
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-80px 0px -60% 0px",
+      }
+    )
+
+    // Observe all sections
+    const sections = navigationLinks
+      .filter(link => link.id !== "resume") // Skip external links
+      .map(link => document.getElementById(link.id))
+      .filter(Boolean)
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section)
+    })
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section)
+      })
+    }
+  }, [])
+
+  // Function to determine if a link is active
+  const isLinkActive = (link: typeof navigationLinks[0]) => {
+    // External links are never marked as active
+    if (link.target === "_blank") return false
+    return activeSection === link.id
+  }
+  return (
+    <header className="px-8 md:px-16 2xl:px-24 font-sans fixed top-0 left-0 w-full z-50 backdrop-blur-md">
+      <div className="flex h-16 justify-between gap-4">
+        {/* Left side */}
+        <div className="flex gap-2">
+          <div className="flex items-center md:hidden">
+            {/* Mobile menu trigger */}
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button className="group size-8" variant="ghost" size="icon">
+                  <svg
+                    className="pointer-events-none"
+                    width={16}
+                    height={16}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 12L20 12"
+                      className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
+                    />
+                    <path
+                      d="M4 12H20"
+                      className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
+                    />
+                    <path
+                      d="M4 12H20"
+                      className="origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
+                    />
+                  </svg>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="start" className="w-36 p-1 md:hidden">
+                <NavigationMenu className="max-w-none *:w-full font-sans">
+                  <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
+                    {navigationLinks.map((link, index) => (
+                      <NavigationMenuItem key={index} className="w-full">
+                        <NavigationMenuLink
+                          href={link.href}
+                          target={link.target}
+                          className="py-1.5"
+                          active={isLinkActive(link)}
+                        >
+                          {link.label}
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    ))}
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </PopoverContent>
+            </Popover>
+          </div>
+          {/* Main nav */}
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-primary hover:text-primary/90">
+              <Image src="/assets/logo.png" alt="logo" width={100} height={100} className="size-8" />
+            </a>
+            {/* Navigation menu */}
+            <NavigationMenu className="h-full *:h-full max-md:hidden">
+              <NavigationMenuList className="h-full gap-2">
+                {navigationLinks.map((link, index) => (
+                  <NavigationMenuItem key={index} className="h-full">
+                    <NavigationMenuLink
+                      active={isLinkActive(link)}
+                      href={link.href}
+                      target={link.target}
+                      className="text-muted-foreground hover:text-primary border-b-primary hover:border-b-primary data-[active]:border-b-primary h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent!"
+                    >
+                      {link.label}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         </div>
-      </nav>
-    </>
+        {/* Right side */}
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="text-sm">
+            <Link href="mailto:diegovs_@outlook.com">
+              Get in touch
+              <SparklesIcon className="-me-1 opacity-80 size-3" size={16} aria-hidden="true" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </header>
   )
 }

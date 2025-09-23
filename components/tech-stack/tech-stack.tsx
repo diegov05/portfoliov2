@@ -1,3 +1,4 @@
+import FadeContent from "../ui/fade-content"
 import { AstroLogo } from "./logos/astro-logo"
 import { DockerLogo } from "./logos/docker-logo"
 import { GitLogo } from "./logos/git-logo"
@@ -9,12 +10,11 @@ import { TypeScriptLogo } from "./logos/ts-logo"
 
 export const HorizontalTechStack: React.FC = () => {
   return (
-    <section
-      data-aos="fade"
-      data-aos-duration="1000"
-      className="
+    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+      <section
+        className="
         mt-12
-        md:max-[3000px]:mt-0
+        md:mt-0
         flex
         flex-col
         justify-center
@@ -23,22 +23,21 @@ export const HorizontalTechStack: React.FC = () => {
         gap-8
         p-4      
       ">
-      <p
-        className="
-        text-[16px]
-        lg:max-[3000px]:text-[23px]
-        text-[#e9ecea]
+        <h2
+          className="
+        text-xl
+        lg:text-2xl
         opacity-60
-        w-[20ch]
-        md:max-[3000px]:w-auto
         font-normal
         text-center
+        font-sans
+        tracking-tighter
         "
-      >
-        Building with the latest and most reliable technologies in the front-end world
-      </p>
-      <div
-        className="
+        >
+          Building with the latest and most reliable technologies in the front-end world
+        </h2>
+        <div
+          className="
           flex
           flex-row
           flex-wrap
@@ -47,16 +46,17 @@ export const HorizontalTechStack: React.FC = () => {
           gap-4
           md:max-[3000px]:gap-8
           "
-      >
-        <NextLogo className="svg-size" />
-        <ReactLogo className="svg-size" />
-        <TailwindLogo className="svg-size" />
-        <TypeScriptLogo className="svg-size" />
-        <AstroLogo className="svg-size" />
-        <SupabaseLogo className="svg-size" />
-        <GitLogo className="svg-size" />
-        <DockerLogo className="svg-size" />
-      </div>
-    </section>
+        >
+          <NextLogo className="svg-size opacity-70" />
+          <ReactLogo className="svg-size" />
+          <TailwindLogo className="svg-size" />
+          <TypeScriptLogo className="svg-size" />
+          <AstroLogo className="svg-size" />
+          <SupabaseLogo className="svg-size" />
+          <GitLogo className="svg-size" />
+          <DockerLogo className="svg-size" />
+        </div>
+      </section>
+    </FadeContent>
   )
 }
