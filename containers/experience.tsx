@@ -261,7 +261,7 @@ export default function ExperienceSection() {
   }, []);
 
   return (
-    <section id="experience" ref={rootRef} className="bg-[#050505] pt-24">
+    <section id="experience" ref={rootRef} className="bg-[#050505] pt-24 overflow-x-hidden">
       <section className="intro">
         <Badge content="[ Relevant Experience ]" className="text-green-200" />
         <h2 className="font-sans tracking-tighter font-medium leading-tight text-[32px] sm:max-lg:text-[45px] lg:text-[64px] max-w-4xl text-center mt-4 text-green-50">Building highly performant, <span className="text-green-100">design-driven</span> web apps</h2>

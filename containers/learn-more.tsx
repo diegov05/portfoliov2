@@ -107,7 +107,7 @@ export const LearnMoreSection = () => {
     <FadeContent duration={800} delay={200}>
       <section
         id="learn-more"
-        className="relative w-max mx-auto py-16 sm:py-20 px-8 md:px-16 2xl:px-28"
+        className="relative w-auto md:w-auto mx-auto py-16 sm:py-20 px-8 md:px-16 2xl:px-28"
       >
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-10">
           {/* LEFT: sticky heading + list */}
