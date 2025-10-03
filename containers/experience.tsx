@@ -286,8 +286,7 @@ export default function ExperienceSection() {
               </div>
               <div className="card-description">
                 <p className="text-white text-base lg:text-lg w-auto font-sans text-center">
-                  A futuristic residence that plays with curvature and flow,
-                  blending bold geometry with natural topography.
+                  A 100-page corporate site reimagined as a modular system of reusable components, where performance and accessibility crown the architecture.
                 </p>
               </div>
             </div>
